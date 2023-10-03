@@ -14,7 +14,7 @@ This tool tries to bypass cloudflare by accessing directly to the origin server 
 
 Sometimes, cloudflare proxy is enabled for a domain, but there is no actual restriction on the server to prevent traffic from coming directly. When a "normal" user try to reach the service, cloudflare DNS will answer with the IP of its own proxy, and will forward traffic to the origin. But if a bad actor knows the IP address, he can use it directly and hit the server without going threw the cloudflare proxy, and the waf rules. Very often the origin IP can easily be found in archives or search engines such as shodan. The cf-waf-bypass tool attempts to do exactly this bypass, by takin in parameter the url, and the origin ip. It'll print the answer, so that you know if the bypass was successful
 ```
-python3 cf-waf-bypass.py -x GET -url https://my-target.com/foo.php -ip 6.6.6.6
+python3 cf-waf-bypass.py --direct -x GET -url https://my-target.com/foo.php -ip 6.6.6.6
 ```
 
 1. bypass cloudflare threw cloudflare
