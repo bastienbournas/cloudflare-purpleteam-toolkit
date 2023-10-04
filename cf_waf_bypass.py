@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 import sys
 import requests
-import ipaddr
 from forcediphttpsadapter.adapters import ForcedIPHTTPSAdapter
 import argparse
 import csv
