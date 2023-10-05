@@ -7,6 +7,8 @@ The toolkit contains:
 2. cf_dns_map - enumerate dns entries, including the proxy status
 3. cf-zt-gateway-detective - search, enumerate and investigate among the Zero Trust Gateway policies
 
+The cf_purpleteam_toolkit_common.py module regroups all the common code and helper functions to be shared by the different tools.   
+
 ### 1. cf_waf_bypass
 This tool aims to bypass cloudflare by accessing directly to the origin server IP, escaping the WAF analysis. 3 kind of bypasses are currently implemented.
 

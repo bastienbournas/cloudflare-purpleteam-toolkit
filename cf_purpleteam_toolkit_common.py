@@ -6,7 +6,7 @@ import ipaddr
 #                                                                                                          #
 # cf_purpleteam_toolkit_common.py                                                                          #
 #                                                                                                          #
-# This module regroups all the common code and helper functions to be shared by the tools.                 #
+# This module regroups all the common code and helper functions to be shared by the different tools.       #
 #                                                                                                          #
 ############################################################################################################
 
