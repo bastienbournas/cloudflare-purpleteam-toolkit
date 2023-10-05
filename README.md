@@ -50,6 +50,16 @@ List unproxied dns entries:
 python3 cf_dns_map.py --unproxied -zid CF_ZONE_ID -cft CF_API_TOKEN -o output.csv
 ```
 
-### 3. cf-zt-gateway-detective
+### 3. cf_zt_gateway_map
 
-TODO
+Navigating threw Cloudflare Gateway policies (DNS, Network, HTTP) in the ui can be hard when there are a lot of them. It is especially hard to find network/dns policies about about a specific IP address. The cf_zt_gateway_map.py tool solves that by relying on cloudflare's API to dump all gateway policies into a CSV format easy to read and process. If the -ip option is given, it will search for policies that match the IP/CIDR. The given IP can be a single one (6.6.6.6/32), or a range (6.6.6.6/24).
+
+Dump all Gateway DNS/Network policies:
+```
+python3 cf_zt_gateway_map.py -cfa CF_ACCOUNT_ID -cft CF_API_TOKEN -o output.csv
+```
+
+Dump all Gateway DNS/Network policies and print policies that match the given IP:
+```
+python3 cf_zt_gateway_map.py -cfa CF_ACCOUNT_ID -cft CF_API_TOKEN -ip 6.6.6.6/32 -o output.csv
+```

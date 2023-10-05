@@ -24,6 +24,9 @@ def get_cf_dns_entries(cf_token, zone_identifier,proxy_enabled=None):
 
     return output
 
+#
+# Argument parsing for CLI usage
+#
 def parse_args():
     parser = argparse.ArgumentParser("cf-dns-map")
     parser.add_argument("-cft","--cf_token", required=True, help="Cloudflare Authorization Bearer token", type=str)
@@ -33,6 +36,9 @@ def parse_args():
     parser.add_argument('--not_proxied',required=False, action=argparse.BooleanOptionalAction)
     return parser.parse_args()
 
+#
+# Main
+#
 def main():
     args = parse_args()
 
