@@ -3,9 +3,9 @@
 This repo contains a collection of tools to perform some security tests, scans and investigations on the established configurations in cloudflare. To keep everything simple, each of them is a small python script with a reduced scope.
 
 The toolkit contains:
-1. cf_waf_bypass - try to bypass the WAF on your origin
-2. cf_dns_map - enumerate dns entries, including the proxy status
-3. cf-zt-gateway-detective - search, enumerate and investigate among the Zero Trust Gateway policies
+1. cf_waf_bypass.py - try to bypass the WAF on your origin
+2. cf_dns_map.py - enumerate dns entries, including the proxy status
+3. cf-zt-gateway-map.py - search, enumerate and investigate among the Zero Trust Gateway policies
 
 The cf_purpleteam_toolkit_common.py module regroups all the common code and helper functions to be shared by the different tools.   
 
