@@ -1,11 +1,12 @@
 # Cloudflare PurpleTeam Toolkit
 
-This repo contains a collection of tools to perform some security tests, scans and investigations on the established configurations in cloudflare. To keep everything simple, each of them is a small python script with a reduced scope.
+This repo contains a collection of tools to perform security tests, scans and enumerations on cloudflare (waf and zero trust). To keep everything simple, each of them is a small python script with a reduced scope.
 
 The toolkit contains:
-1. cf_waf_bypass.py - try to bypass the WAF on your origin
+1. cf_waf_bypass.py - try to bypass the WAF and access your origin directly
 2. cf_dns_map.py - enumerate dns entries, including the proxy status
-3. cf-zt-gateway-map.py - search, enumerate and investigate among the Zero Trust Gateway policies
+3. cf_zt_gateway_map.py - search, enumerate and investigate among the Zero Trust Gateway policies
+4. cf_zt_fleet_monitoring.py - get the WARP status of the whole fleet (connected, paused, failures, etc)
 
 The cf_purpleteam_toolkit_common.py module regroups all the common code and helper functions to be shared by the different tools.   
 
@@ -64,4 +65,12 @@ python3 cf_zt_gateway_map.py -cfa CF_ACCOUNT_ID -cft CF_API_TOKEN -o output.csv
 Dump all Gateway DNS/Network policies and print policies that match the given IP:
 ```
 python3 cf_zt_gateway_map.py -cfa CF_ACCOUNT_ID -cft CF_API_TOKEN -ip 6.6.6.6/32 -o output.csv
+```
+
+### 4. cf_zt_fleet_monitoring
+
+Get the WARP statuses of the whole fleet. The tool returns a json with all members email addresses per status (connected, paused, disconnected, connecting, happyeyeballsfailed).
+
+```
+python3 cf_zt_fleet_monitoring.py --cf_account CF_ACCOUNT_ID --cf_token CF_API_TOKEN
 ```
